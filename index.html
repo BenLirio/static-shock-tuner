@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static Shock Tuner</title>
+  <meta property="og:title" content="Static Shock Tuner">
+  <meta property="og:description" content="Drag across the static to tune today's hidden numbers-station broadcast. Same message for everyone, yours to find.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <script src="feedback.js" defer></script>
+</head>
+<body>
+  <main id="app">
+    <header class="banner">
+      <div class="callsign">EF-<span id="callsign">000</span></div>
+      <div class="date" id="utcdate">—</div>
+    </header>
+
+    <section id="tuner">
+      <canvas id="static" aria-label="static field — drag to tune"></canvas>
+      <div class="overlay">
+        <div class="needle-row">
+          <canvas id="needle" width="320" height="60"></canvas>
+        </div>
+        <div class="readout">
+          <div class="label" id="hintcopy">drag to tune</div>
+          <div class="strength">
+            <div class="bar"><div class="bar-fill" id="barfill"></div></div>
+            <div class="pct" id="pct">0%</div>
+          </div>
+          <div class="lockline">
+            <span id="lockstatus">— no carrier —</span>
+            <span class="lockclock" id="lockclock">0.0s</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reveal" class="hidden" aria-live="polite">
+      <div class="card" id="card">
+        <div class="card-head">
+          <span class="dot"></span>
+          <span class="head-label">TRANSMISSION RECEIVED</span>
+          <span class="head-date" id="cardDate"></span>
+        </div>
+        <div class="broadcast" id="broadcast"></div>
+        <div class="card-foot">
+          <span id="microcopy">— end transmission —</span>
+        </div>
+      </div>
+      <div id="share">
+        <button onclick="share()">Transmit to a friend</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
