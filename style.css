@@ -74,6 +74,27 @@ main#app {
 .callsign { color: var(--phos); }
 .date { font-variant-numeric: tabular-nums; }
 
+/* ---- premise ---- */
+.premise {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--phos-dim);
+  letter-spacing: 0.04em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px dashed var(--phos-faint);
+  padding: 12px 14px;
+  background: rgba(51, 255, 102, 0.03);
+}
+.premise p { margin: 0; }
+.premise strong {
+  color: var(--phos);
+  font-weight: 400;
+  text-shadow: 0 0 3px rgba(51,255,102,0.5);
+}
+.premise-how { font-size: 13px; color: var(--phos-dim); }
+
 /* ---- tuner ---- */
 #tuner {
   position: relative;
